@@ -7,5 +7,5 @@ def main():
     print(users_from_internet)
 
 
-if __name__ == '__name__':
+if __name__ == '__main__':
     main()
