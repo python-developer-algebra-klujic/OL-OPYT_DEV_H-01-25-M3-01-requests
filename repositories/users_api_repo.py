@@ -1,7 +1,8 @@
-import json
+from typing import List
 import requests
 
 from constants import BASE_URL
+from models.users import User
 from models.users_mapper import UserMapper
 
 
@@ -9,7 +10,7 @@ class UsersApiRepo:
     def __init__(self):
         self.url = f'{BASE_URL}/users'
 
-    def get_users(self):
+    def get_users(self) -> List[User]:
         try:
             response = requests.get(self.url)
             if response.status_code == 200:
@@ -28,7 +29,7 @@ class UsersApiRepo:
             return None
 
 
-    def get_user(self, id: int):
+    def get_user(self, id: int) -> User:
         try:
             response = requests.get(self.url + f'/{id}')
             if response.status_code == 200:
