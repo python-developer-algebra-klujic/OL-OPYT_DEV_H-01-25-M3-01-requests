@@ -1,1 +1,1 @@
-from repositories.users_api_repo import UsersApi
+from repositories.users_api_repo import UsersApiRepo

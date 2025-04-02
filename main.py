@@ -1,10 +1,20 @@
-from repositories import UsersApi
+from repositories import UsersApiRepo
 
 
 def main():
-    user_api_repo = UsersApi()
+    user_api_repo = UsersApiRepo()
     users_from_internet = user_api_repo.get_users()
-    print(users_from_internet)
+    if users_from_internet != None:
+        print(users_from_internet)
+    else:
+        print('Nema podataka o korisnicmia na internetu')
+
+    print()
+    user_5 = user_api_repo.get_user(5)
+    if user_5 != None:
+        print(user_5)
+        print(user_5.email)
+    print()
 
 
 if __name__ == '__main__':
