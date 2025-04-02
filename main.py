@@ -5,7 +5,7 @@ def main():
     user_api_repo = UsersApiRepo()
     users_from_internet = user_api_repo.get_users()
     if users_from_internet != None:
-        print(users_from_internet)
+        print(*users_from_internet, sep='\n')
     else:
         print('Nema podataka o korisnicmia na internetu')
 
